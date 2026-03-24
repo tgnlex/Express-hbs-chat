@@ -1,0 +1,33 @@
+
+
+a, button { 
+  $color: #3299ef;
+  --color: $color;
+};
+
+ul { padding: 0; list-style-type: none; };
+
+header, footer { width: 100%; }
+
+button { background-color: var(--color); };
+
+
+a { 
+  $fs: 1.2em;
+  text-decoration: none; 
+  font-size: $fs; 
+  color: var(--color);
+};
+
+img { max-width: 100% };
+
+hr { 
+  $color: white;
+  $b-top: 1px dotted $color; 
+  border-top: $b-top; 
+  border: 0; 
+}
+
+@media screen and (prefers-color-scheme: light) {
+  hr { $color: black };
+}

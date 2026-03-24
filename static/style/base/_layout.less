@@ -1,0 +1,27 @@
+/***
+  Main Page Layout.
+
+  header width and footer width are already defined in the defaults file.
+ ***/
+
+#page.layout {
+  $size: 100%;
+  height: $size;
+  width: $size;
+ & #page--header, #page-footer { 
+   $max-w: 1920px;
+   $base-height: 5%; 
+ }
+
+ & header#page--header {
+   $height: $base-height * 1.5;
+   max-width: $max-w;
+   height: $height;
+
+ }
+ & footer#page--footer {
+   $height: $base-height;
+   max-width: $max-w;
+   height: $height;
+ }
+}

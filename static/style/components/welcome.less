@@ -1,0 +1,13 @@
+
+#welcome {
+  @wrapper-color: transparent;
+  @text-color: white;
+  @bg-color: black;
+  background: black;
+  & #welcome--wrapper { 
+    background: @wrapper-color;
+    & #welcome--text {
+      color: @text-color;
+    }
+  }
+}
