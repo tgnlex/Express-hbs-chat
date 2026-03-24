@@ -21,6 +21,9 @@ const APP_PORT: PortNum = process.env.APP_PORT || 4000;
 const APP_NODE_ENV: Environment = process.env.APP_NODE_ENV || "development";
 const APP_LOG_LEVEL: LogLevel = process.env.APP_LOG_LEVEL || "debug";
 
+const APP_DEVELOPMENT = APP_NODE_ENV == 'development';
+const APP_PRODUCTION = APP_NODE_ENV == 'production';
+const APP_TESTING = APP_NODE_ENV == 'testing';
 interface AppEnv {
   LOG_LEVEL: LogLevel;
   NODE_ENV: Environment;
@@ -29,6 +32,9 @@ interface AppEnv {
   NAME: ServerName;
   HOST: Hostname;
   PORT: PortNum;
+  DEVELOPMENT: boolean;
+  PRODUCTION: boolean;
+  TESTING: boolean;
 }
 
 const APP: AppEnv = {
@@ -39,6 +45,12 @@ const APP: AppEnv = {
   NAME: APP_NAME,
   HOST: APP_HOST,
   PORT: APP_PORT,
+  DEVELOPMENT: APP_DEVELOPMENT,
+  PRODUCTION: APP_PRODUCTION, 
+  TESTING: APP_TESTING
 }
+
+
+
 
 export { APP };

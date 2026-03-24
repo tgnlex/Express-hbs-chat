@@ -18,23 +18,30 @@ const plugins: Plugins = [
 
 const globals: Globals = [
   /*** APP GLOBALS ***/
-  { key: 'app.log_level', value: APP.LOG_LEVEL },
-  { key: 'app.node_env', value: APP.NODE_ENV },
+  { key: 'app.logs', value: APP.LOG_LEVEL },
+  { key: 'app.node', value: APP.NODE_ENV },
   { key: 'app.protocol', value: APP.PROTOCOL },
   { key: 'app.version', value: APP.VERSION },
   { key: 'app.name', value: APP.NAME},
   { key: 'app.host', value: APP.HOST},
   { key: 'app.port', value: APP.PORT},
   { key: 'app.engine', value: APP.ENGINE },
+  { key: 'app.development', value: APP.DEVELOPMENT },
+  { key: 'app.production', value: APP.PRODUCTION },
+  { key: 'app.testing', value: APP.TESTING },
   /*** PATH GLOBALS ***/
   { key: 'path.upload', value: PATH.UPLOAD },
   { key: 'path.static', value: PATH.STATIC },
   { key: 'path.views', value: PATH.VIEWS },
   /*** EXPRESS GLOBALS ***/
+  { key: 'view engine', value: 'handlebars'},
   { key: 'view path', value: PATH.VIEWS }
 ];
 
-
-const config =  { plugins, globals };
+interface IConfig {
+  globals: Globals;
+  plugins: Plugins;
+}
+const config: IConfig = { plugins: plugins, globals: globals };
 
 export default config;
