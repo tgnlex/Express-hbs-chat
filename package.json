@@ -17,6 +17,7 @@
     "express": "^5.2.1",
     "express-handlebars": "^8.0.6",
     "helmet": "^8.1.0",
+    "less": "^4.6.4",
     "typescript": "^5.9.3"
   }
 }

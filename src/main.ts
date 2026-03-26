@@ -1,21 +1,26 @@
-import information from './server/modules/info.ts'
+import type { Main } from './type/prototypes.ts'
+import { MESSAGE_OF_THE_DAY , SPACE} from './var/constants.ts';
+import { information. startup } from './utils/logging.ts'
+import { panic } from './utils/helpers.ts';
+import Application from './server/modules/bootstrapper.ts';
+import application from './server/app.ts';
 import process from 'process';
-import app from './server/app.ts';
 
-const MESSAGE_OF_THE_DAY = 'Dont forget to eat your wheaties.'
+import TAG from './var/tag';
+
+
+
 
 /*** MAIN LOOP ***/
-function main() {
+const main: Main = () => {
   console.info('RUNNING MAIN SERVER LOOP');
-  app.server.listen(app.port(), (err) => { 
-    if (err) { 
-      console.error(err);
-      process.exit(1);
-    }
-
-    console.info(`[SERVER] listening on ${app.protocol()}://${app.host()}:${app.port()}`)
+  application.server.listen(application.port(), (err) => { 
+    if (err) { panic(err) };
+  
+    startup(application);
+    information(application, MESSAGE_OF_THE_DAY);
   });
-  information(app, MESSAGE_OF_THE_DAY);
+  return 0;
 };
 
 main();

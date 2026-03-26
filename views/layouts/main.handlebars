@@ -1,24 +1,21 @@
 <html lang="en">
   <head>
-    <title>Chat App</title>
-    <!--- STYLESHEETS
-    <link rel="stylesheet" href="style/app.less">
+    <title>Chat App</title>       
+
+    <!--- STYLESHEETS ---->
+    <link rel="stylesheet/css" type="text/css" href="style/app.css">
   </head>
   <body>
-    <div id="page" class="layout">
-      <header id="page--header"><!--- Header goes here ---></header>
+    <div id="layout" class="layout">
+      <header id="layout--header"></header>
       {{{ body }}}
-      <footer id="page--footer"><!--- Footer goes here ---></footer>
+      <footer id="layout--footer"></footer>
     </div>
-   
     <!--- LIBRARIES --->
-    <!--- LESS --->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/4.4.1/less.min.js"></script>
-    <!--- HTMX --->
-    <script src="https://cdn.jsdelivr.net/npm/htmx.org@2.0.8/dist/htmx.min.js"></script>
-    <!--- Hyperscript --->
     <script src="https://unpkg.com/hyperscript.org@0.9.14"></script>
-    <!--- scripts --->
-    <script src="js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/htmx.org@2.0.8/dist/htmx.min.js"></script>
+
+    <!--- SCRIPTS --->
+    <script src="/js/main.js"></script>
   </body> 
 </html>

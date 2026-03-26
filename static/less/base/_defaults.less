@@ -1,0 +1,44 @@
+@link-color: #3299ef;
+html, body { 
+  overflow: auto;
+  height: 100vh; 
+  width: 100vw;
+}
+
+body { overflow-y: scroll; };
+
+h1, h2, h3, h4, h5, h6 { margin: 0 };
+
+ul { padding: 0; list-style-type: none; };
+
+header, footer { width: 100%; }
+
+button { background-color: var(--color); };
+
+
+a { 
+  @fs: 1.2em;
+  text-decoration: none; 
+  font-size: @fs; 
+  color: @link-color;
+};
+
+img { max-width: 100% };
+
+hr { 
+  @color: white;
+  @border-top: 1px dotted @color; 
+  border-top: @border-top; 
+  border: 0; 
+}
+
+button {
+  @btn-hover: @link-color; 
+  & :hover {
+    border: @btn-hover;
+  }
+}
+
+@media screen and (prefers-color-scheme: light) {
+  hr { @color: black };
+}

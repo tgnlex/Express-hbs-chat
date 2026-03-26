@@ -1,0 +1,17 @@
+
+
+
+#layout {
+  --layout--width: 100%;
+  --layout--height: 100%;
+  height: var(--layout--height);
+  width: var(--layout--width);
+}
+
+#layout--header {
+
+}
+
+#layout--footer {
+
+}

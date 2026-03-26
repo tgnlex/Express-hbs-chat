@@ -1,0 +1,57 @@
+:root {
+  --font-main: Helvetica sans-serif;
+  --font-pop: Poppins;
+
+  /*** BLUES ***/
+  --basic-blue: rgba(0, 0, 255, 1);
+  --royal-blue: rgba(48, 82, 222, 1);
+  --cyan: rgba(0, 255, 255, 1);
+  --turquoise: rgba(0, 255, 239, 1);
+  
+  /*** GREENS ***/
+  --green: rgba(0, 255, 0, 1);
+  --forest-green: rgba(34, 138, 34, 1);
+  --emerald: rgba(80, 200, 120, 1);
+  
+  /*** REDS ***/
+  --red: rgba(255, 0, 0, 1);
+  --cherry: rgba(210, 10, 46, 1);
+  
+  /*** PURPLES ***/
+  --purple: rgba(255, 0, 255, 1);
+  --rebecca-purple: rgba(102, 41, 153, 1);
+  
+  /*** PINK ***/
+  --pastel-pink: rgba(255, 192, 203, 1);
+  --hot-pink: rgba(255, 105, 180, 1);
+  --deep-pink: rgba(255, 20, 147, 1);
+  --pussy-pink: rgba(255, 20, 147, 0.89);
+  
+  /*** YELLOW ***/
+  --yellow: rgba(255, 255, 0, 1);
+  --gold: rgba(255, 215, 0, 1);
+  
+  /*** ORANGE ***/
+  --orange: rgba(255, 165, 0, 1);
+  --safety-orange: rgba(255, 90, 20, 1);
+  --tangerine: rgba(240, 128, 0, 1);
+  
+  /*** WHITE ***/
+  --white: rgba(255, 255, 255, 1);
+  --linen: rgba(250, 240, 230, 1);
+  
+  /*** BLACKS ***/
+  --black: rgba(7, 7, 7, 1);
+  
+  /*** COLOR ALIASING ***/
+  --bg-primary: @black;
+  --fg-primary: @linen;
+  --success: @emerald;
+  --submit: @royal-blue;
+  --warn: @yellow;
+  --alert: @safety-orange;
+  --error: @red;
+
+  /*** GRADIENTS ***/
+  --linear-gradient-blue: linear-gradient(to bottom right, var(--royal-blue, var(--cyan);
+}

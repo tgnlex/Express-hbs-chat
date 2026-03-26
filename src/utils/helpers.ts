@@ -1,3 +1,4 @@
+import type { Noop, Pass, Fail, Concat, Char } from '../type/prototypes.ts';
 const noop = () => {};
 const pass = () => { return true  };
 const fail = () => { return false };
@@ -5,12 +6,12 @@ const fail = () => { return false };
 const fmtError = (error) => `[ERROR] ${error}` 
 const fmtAddress = (prefix, host, port) => `${prefix}://${host}:${port}`
 
-const concat = (base: string = '',  arr: StrArray = []) => {
+const concat = (base: string = '',  arr: string | string[] = []) => {
   arr.forEach((str) => { base = base + str });
   return base;
 };
 
-const panic = (err) => {
+const panic = (err: object) => {
   console.error(fmtError(error));
   process.exit(1);
 };

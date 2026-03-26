@@ -1,0 +1,30 @@
+:root {
+  @root--weight: 400;
+  @root--fonts: Poppins, sans-serif;
+  @root--line: 1.5;
+  @root--fs: 16px;
+
+
+  line-height: @root--line;
+  font-family: @root--fonts;
+  font-weight: @root--weight;
+  font-size: @root--fs;
+
+}
+
+
+
+
+* { 
+  @global--fonts: inherit;
+  @global--color: inherit;
+  @global--margin: 0;
+  @global--pad: 0;
+  
+  box-sizing: border-box; 
+  color:  @global--color;
+  margin: @global--margin;
+  font-family: @global--fonts;
+  padding: @global--pad;
+};
+

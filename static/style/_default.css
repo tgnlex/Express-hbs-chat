@@ -1,0 +1,23 @@
+:root {
+  --root--fs: 16px;
+  --root--fw: 400;
+  font-size: var(--root-fs);
+  font-weight: 400;
+};
+
+* {
+  --global--pad: 0;
+  --global--m: 0;
+  box-sizing: border-box;
+  padding: var(--global--pad);
+  margin: var(--global--m);
+}
+
+html {
+  --html--height: 100vh;
+  --html--width: 100vw;
+  height: var(--html--height);
+  width: var(--html--width);
+}
+
+ul, ol { list-style-type: none; padding: 0;

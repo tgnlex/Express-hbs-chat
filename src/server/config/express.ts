@@ -8,6 +8,7 @@ type Globals = Array<{ key: string; value: string | number | boolean }>
 type Plugins = Array<Function>
 
 const plugins: Plugins = [
+  express.static(PATH.STATIC),
   express.urlencoded({ extended: true }),
   express.json(), 
   express.text(), 

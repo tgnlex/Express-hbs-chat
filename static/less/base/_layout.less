@@ -1,0 +1,28 @@
+
+
+#layout {
+  .max-size();
+
+  
+  @header-height: calc(@footer-height * 1.5);
+  @header-width: calc(@site-width - 5%);
+
+  @footer-height: 5%;
+  @footer-width: calc(@site-width - 5%);
+
+
+  width: @site-width;
+  max-width: @site-max-width;
+
+  #layout--header {
+    height: @header-height;
+    width: @header-width;
+    background: @blue-gradient;
+  }
+
+  #layout--footer {
+    height: @footer-height;
+    width: @footer-width;
+    background: @blue-gradient;
+  }
+}
