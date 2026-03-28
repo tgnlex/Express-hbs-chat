@@ -1,21 +1,28 @@
 import { engine } from 'express-handlebars';
 import Application from './modules/bootstrapper';
-
+import AppError from './modules/error';
 import config from './config/express.ts';
 import router from './routes/index.ts';
-import express from 'express';
 
 /*** APPLICATION ***/
-const app = new Application(config);
+const application = new Application(config);
 
-app.server.disable('x-powered-by');
-app.server.engine('handlebars', engine());
+/*** ENGINE ***/
+application.server.engine('handlebars', engine());
+
 /*** BOOTSTRAP ***/
-app.bootstrap();
+application.bootstrap(router);
 
+/*** ROUTE NOT FOUND ***/
+application.server.all('*', (req, res, next) => { next(new AppError(`Can't find ${req.originalUrl} on this server!`, 404))});
 
-app.server.use(router);
+/*** NOW ITS ART ***/
+export default application;
 
-
-
-export default app;
+/*********************
+ * @JS-DOC           *
+ * sponser me        *
+ * github.com/tgnlex *            
+ * ****************************************
+ * SWAGGER UI ? MORE LIKE : ID RATHER DIE *
+ ******************************************

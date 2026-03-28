@@ -1,4 +1,4 @@
-import express from 'express';
+iimport express from 'express';
 
 class Application {
   config = { globals: [], plugins: [] };  
@@ -9,6 +9,7 @@ class Application {
 
   constructor(config) {
     this.server = express();
+    this.server.disable('x-powered-by');
     this.log = config.logger || console;
     if (config.globals) this.config.globals = config.globals;
     if (config.plugins) this.config.plugins = config.plugins;
@@ -22,18 +23,12 @@ class Application {
 
   setDatabase(db) { this.db = db; }
   
-  /*** Prestrap ***/
-  prestrap(engine_id, engine) {
-    this.server.engine(engine_id, engine);
-    this.server.disable('x-powered-by');
-    this.server.enable('view cache');
-  }
-   
   /*** Bootstrap ***/
-  bootstrap() {
+  bootstrap(router?) {
     const { plugins, globals } = this.config;
     globals.forEach((glob) => this.server.set(glob.key, glob.value));
     plugins.forEach((plug) => this.server.use(plug));
+    if (router) this.server.use(router);
   };
   /*** Get Globals ***/
   development() { return this.sever.get('app.developnent') }
